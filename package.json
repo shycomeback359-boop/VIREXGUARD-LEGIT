@@ -1,0 +1,26 @@
+{
+  "name": "virex-guard",
+  "version": "2.1.1",
+  "private": true,
+  "description": "VIREX GUARD script access platform and Discord bot",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "bot:deploy": "node bot/make-commands.js && node bot/deploy-commands.js",
+    "check": "node --check src/index.js && node --check src/db.js && node --check bot/bot.js && node --check bot/make-commands.js && node --check bot/deploy-commands.js && node --check public/dashboard.js && node --check test/database.test.js && node --check test/migration.test.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "multer": "^2.0.2"
+  }
+}
